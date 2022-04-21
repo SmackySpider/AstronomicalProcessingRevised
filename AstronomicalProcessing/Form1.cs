@@ -166,7 +166,7 @@ namespace AstronomicalProcessing
             {
                 if (txtSearch.Focused)
                 {
-                    BinarySearch(this, e);
+                    MessageBox.Show("Please press a search button");
                 }
                 else if (txtEdit.Focused)
                 {
@@ -232,6 +232,28 @@ namespace AstronomicalProcessing
 
             midExtreme = Math.Round(((smallest + largest) / 2 ), 2);
             txtMidExtr.Text = midExtreme.ToString();
+        }
+
+        private void Range(object sender, EventArgs e)
+        {
+            double smallest = 0;
+            double largest = 0;
+            double range = 0;
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                if (i == 0)
+                {
+                    smallest = neutrinoData[i];
+                }
+                else if (i == (arrayLength - 1))
+                {
+                    largest = neutrinoData[i];
+                }
+            }
+
+            range = Math.Round((largest - smallest), 2);
+            txtRange.Text = range.ToString();
         }
     }
 }

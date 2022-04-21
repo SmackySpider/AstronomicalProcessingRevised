@@ -267,6 +267,7 @@
             this.btnRange.TabIndex = 23;
             this.btnRange.Text = "Range";
             this.btnRange.UseVisualStyleBackColor = true;
+            this.btnRange.Click += new System.EventHandler(this.Range);
             // 
             // txtRange
             // 
