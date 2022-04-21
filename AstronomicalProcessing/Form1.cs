@@ -3,13 +3,7 @@
 // Description
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AstronomicalProcessing
@@ -265,10 +259,11 @@ namespace AstronomicalProcessing
         private void Mode(object sender, EventArgs e)
         {
             double mode = 0;
-            int arrayMax = neutrinoData.Max();
+            //int previousMode = 0;
+            int countArrayMax = neutrinoData.Max();
 
-            int[] countArray = new int[arrayMax + 1];
-            for (int i = 0; i < arrayMax; i++)
+            int[] countArray = new int[countArrayMax + 1];
+            for (int i = 0; i < countArrayMax; i++)
             {
                 countArray[i] = 0;
             }
@@ -278,32 +273,37 @@ namespace AstronomicalProcessing
                 countArray[neutrinoData[i]]++;
             }
 
-            int modeCount = countArray[0];
-
-            for (int i = 0; i < (arrayMax + 1); i++)
+            int currentCount = countArray[0];
+            for (int i = 1; i < countArrayMax; i++)
             {
-                if (countArray[i] > modeCount)
+                if ((countArray[i] > currentCount) && (countArray[i] > 0))
                 {
-                    modeCount = countArray[i];
+                    currentCount = countArray[i];
                     mode = i;
                 }
             }
 
-            //int countLength = countArray.Length;
-            ////int highestCount = 0;
-            //bool flag = true;
-            //for (int i = 0; i <= (countLength - 1) && flag; i++)
-            //{
-            //    //flag = false;
-            //    for (int j = (i + 1); j < countLength; j++)
-            //    {
-            //        if ((countArray[i] + countArray[j]) == (modeCount / 2))
-            //        {
-            //            mode = 0;
-            //            //flag = true;
-            //        }
-            //    }
-            //}
+            int countLength = countArray.Length;
+            bool flag = true;
+            for (int i = 1; i <= (countLength - 1) && flag; i++)
+            {
+                flag = false;
+                for (int j = 0; j < (countLength - 1); j++)
+                {
+                    if (countArray[j + 1] < countArray[j])
+                    {
+                        int temp = countArray[j];
+                        countArray[j] = countArray[j + 1];
+                        countArray[j + 1] = temp;
+                        flag = true;
+                    }
+                }
+            }
+
+            if (countArray[countLength - 1] == countArray[countLength - 2])
+            {
+                mode = 0;
+            }
 
             txtMode.Text = mode.ToString();
         }
