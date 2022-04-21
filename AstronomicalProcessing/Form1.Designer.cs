@@ -169,6 +169,7 @@
             this.btnSeqSearch.TabIndex = 11;
             this.btnSeqSearch.Text = "Sequential";
             this.btnSeqSearch.UseVisualStyleBackColor = true;
+            this.btnSeqSearch.Click += new System.EventHandler(this.SequentialSearch);
             // 
             // label2
             // 

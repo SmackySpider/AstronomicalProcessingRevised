@@ -49,6 +49,7 @@ namespace AstronomicalProcessing
         {
             FillArray();
             RefreshArray();
+            RefreshTxtBoxes();
             DisableButtons();
         }
 
@@ -100,6 +101,22 @@ namespace AstronomicalProcessing
                 else
                 {
                     min = mid + 1;
+                }
+            }
+            MessageBox.Show(target + " not found in array");
+        }
+
+        // Search through the array until the target is found, or the array is fully searched
+        private void SequentialSearch(object sender, EventArgs e) {
+            if (!(Int32.TryParse(txtSearch.Text, out int target))) {
+                MessageBox.Show("You must enter a valid number");
+                return;
+            }
+
+            for (int i = 0; i < arrayLength; i++) {
+                if (neutrinoData[i] == target) {
+                    MessageBox.Show(target + " Found at index " + i);
+                    return;
                 }
             }
             MessageBox.Show(target + " not found in array");
@@ -174,6 +191,14 @@ namespace AstronomicalProcessing
             btnRange.Enabled = false;
             btnEdit.Enabled = false;
             btnMidExtr.Enabled = false;
+        }
+
+        private void RefreshTxtBoxes() {
+            txtAvg.Text = "";
+            txtEdit.Text = "";
+            txtMidExtr.Text = "";
+            txtMode.Text = "";
+            txtRange.Text = "";
         }
 
         // This method calculates the average of a sorted array using btnAvg
