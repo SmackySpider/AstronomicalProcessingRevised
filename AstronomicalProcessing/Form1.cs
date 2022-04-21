@@ -289,6 +289,22 @@ namespace AstronomicalProcessing
                 }
             }
 
+            //int countLength = countArray.Length;
+            ////int highestCount = 0;
+            //bool flag = true;
+            //for (int i = 0; i <= (countLength - 1) && flag; i++)
+            //{
+            //    //flag = false;
+            //    for (int j = (i + 1); j < countLength; j++)
+            //    {
+            //        if ((countArray[i] + countArray[j]) == (modeCount / 2))
+            //        {
+            //            mode = 0;
+            //            //flag = true;
+            //        }
+            //    }
+            //}
+
             txtMode.Text = mode.ToString();
         }
     }
