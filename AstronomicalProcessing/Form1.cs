@@ -255,7 +255,7 @@ namespace AstronomicalProcessing
 
             int modeCount = countArray[0];
 
-            for (int i = 0; i < arrayMax; i++)
+            for (int i = 0; i < (arrayMax + 1); i++)
             {
                 if (countArray[i] > modeCount)
                 {
