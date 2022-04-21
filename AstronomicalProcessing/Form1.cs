@@ -255,5 +255,35 @@ namespace AstronomicalProcessing
             range = Math.Round((largest - smallest), 2);
             txtRange.Text = range.ToString();
         }
+
+        private void Mode(object sender, EventArgs e)
+        {
+            int arrayMax = neutrinoData.Max();
+
+            int total = arrayMax + 1;
+            int[] count = new int[total];
+            for (int i = 0; i < total; i++)
+            {
+                count[i] = 0;
+            }
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                count[neutrinoData[i]]++;
+            }
+
+            int mode = 0;
+            int modeCount = count[0];
+            for (int i = 0; i < total; i++)
+            {
+                if (count[i] > modeCount)
+                {
+                    modeCount = count[i];
+                    mode = i;
+                }
+            }
+
+            txtMode.Text = mode.ToString();
+        }
     }
 }
