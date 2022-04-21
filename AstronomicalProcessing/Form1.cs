@@ -44,26 +44,6 @@ namespace AstronomicalProcessing
             }
         }
 
-        // Check and re-randomise duplicate data in array 
-        public void CheckDuplicate()
-        {
-            int numLength = arrayLength;
-            bool flag = true;
-            for (int i = 1; (i <= (numLength - 1)) && flag; i++)
-            {
-                flag = false;
-                for (int j = 0; j < (numLength - 1); j++)
-                {
-                    if (neutrinoData[j + 1] == neutrinoData[j])
-                    {
-                        Random rand = new Random();
-                        neutrinoData[j] = rand.Next(10, 99);
-                        flag = true;
-                    }
-                }
-            }
-        }
-
         // Perform the FillArray() and RefreshArray() methods when btnRandomise is clicked
         private void RandomiseArray(object sender, EventArgs e)
         {
@@ -88,7 +68,6 @@ namespace AstronomicalProcessing
                 }
             }
             RefreshArray();
-            //CheckDuplicate();
             EnableButtons();
         }
 
@@ -234,6 +213,7 @@ namespace AstronomicalProcessing
             txtMidExtr.Text = midExtreme.ToString();
         }
 
+        // This method calculates the range of a sorted array using btnRange
         private void Range(object sender, EventArgs e)
         {
             double smallest = 0;
@@ -256,10 +236,10 @@ namespace AstronomicalProcessing
             txtRange.Text = range.ToString();
         }
 
+        // This method calculates the mode of a sorted array using btnMode
         private void Mode(object sender, EventArgs e)
         {
             int arrayMax = neutrinoData.Max();
-
             int total = arrayMax + 1;
             int[] count = new int[total];
             for (int i = 0; i < total; i++)
@@ -272,7 +252,7 @@ namespace AstronomicalProcessing
                 count[neutrinoData[i]]++;
             }
 
-            int mode = 0;
+            double mode = 0;
             int modeCount = count[0];
             for (int i = 0; i < total; i++)
             {
