@@ -239,26 +239,27 @@ namespace AstronomicalProcessing
         // This method calculates the mode of a sorted array using btnMode
         private void Mode(object sender, EventArgs e)
         {
+            double mode = 0;
             int arrayMax = neutrinoData.Max();
-            int total = arrayMax + 1;
-            int[] count = new int[total];
-            for (int i = 0; i < total; i++)
+
+            int[] countArray = new int[arrayMax + 1];
+            for (int i = 0; i < arrayMax; i++)
             {
-                count[i] = 0;
+                countArray[i] = 0;
             }
 
             for (int i = 0; i < arrayLength; i++)
             {
-                count[neutrinoData[i]]++;
+                countArray[neutrinoData[i]]++;
             }
 
-            double mode = 0;
-            int modeCount = count[0];
-            for (int i = 0; i < total; i++)
+            int modeCount = countArray[0];
+
+            for (int i = 0; i < arrayMax; i++)
             {
-                if (count[i] > modeCount)
+                if (countArray[i] > modeCount)
                 {
-                    modeCount = count[i];
+                    modeCount = countArray[i];
                     mode = i;
                 }
             }
