@@ -259,10 +259,8 @@ namespace AstronomicalProcessing
         private void Mode(object sender, EventArgs e)
         {
             double mode = 0;
-            //int previousMode = 0;
             int countArrayMax = neutrinoData.Max();
-
-            int[] countArray = new int[countArrayMax + 1];
+            int[] countArray = new int[++countArrayMax];
             for (int i = 0; i < countArrayMax; i++)
             {
                 countArray[i] = 0;
