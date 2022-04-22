@@ -162,7 +162,7 @@ namespace AstronomicalProcessing
             {
                 if (txtSearch.Focused)
                 {
-                    MessageBox.Show("Please press a search button");
+                    MessageBox.Show("You must click on any search button");
                 }
                 else if (txtEdit.Focused)
                 {
@@ -170,7 +170,7 @@ namespace AstronomicalProcessing
                 }
                 else
                 {
-                    MessageBox.Show("Please enter an integer in the box");
+                    MessageBox.Show("You must enter an integer in the box");
                 }
             }
         }
@@ -317,12 +317,12 @@ namespace AstronomicalProcessing
                 // This warning is displayed if every number in the array is unique
                 if (countArray[countLength - 1] == 1)
                 {
-                    MessageBox.Show("The mode cannot be found.");
+                    MessageBox.Show("The mode cannot be found in the array.");
                 }
                 // This warning is displayed when there are two or more modes (not unimodal)
                 else
                 {
-                    MessageBox.Show("The mode is not unimodal.");
+                    MessageBox.Show("The mode of the array is not unimodal.");
                 }
             }
 
