@@ -291,7 +291,7 @@ namespace AstronomicalProcessing
                 }
             }
 
-            // Perform a bubble sort on the count array
+            // Perform a bubble sort on the count array so that the number of modes can be checked
             int countLength = countArray.Length;
             bool flag = true;
             for (int i = 1; i <= (countLength - 1) && flag; i++)
@@ -309,8 +309,8 @@ namespace AstronomicalProcessing
                 }
             }
 
-            // If the last index of the sorted count array is equal to the second last,
-            // the mode is not unimodal and is set to zero. Display a warning to the user.
+            // If the last index of the sorted count array is equal to the second last, the mode is not
+            // unimodal and is set to zero. Display a warning to the user and clear the mode text box.
             if (countArray[countLength - 1] == countArray[countLength - 2])
             {
                 mode = 0;
@@ -318,15 +318,20 @@ namespace AstronomicalProcessing
                 if (countArray[countLength - 1] == 1)
                 {
                     MessageBox.Show("The mode cannot be found in the array.");
+                    txtMode.Clear();
                 }
                 // This warning is displayed when there are two or more modes (not unimodal)
                 else
                 {
                     MessageBox.Show("The mode of the array is not unimodal.");
+                    txtMode.Clear();
                 }
             }
-
-            txtMode.Text = mode.ToString();
+            // Display the mode to the user if there is only one mode
+            else
+            {
+                txtMode.Text = mode.ToString();
+            }
         }
     }
 }
