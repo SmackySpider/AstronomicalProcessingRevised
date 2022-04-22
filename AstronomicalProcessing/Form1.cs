@@ -261,16 +261,20 @@ namespace AstronomicalProcessing
             double mode = 0;
             int countArrayMax = neutrinoData.Max();
             int[] countArray = new int[++countArrayMax];
+
+            // Create a count array and initialise with zero values
             for (int i = 0; i < countArrayMax; i++)
             {
                 countArray[i] = 0;
             }
 
+            // Add 1 to the count array
             for (int i = 0; i < arrayLength; i++)
             {
                 countArray[neutrinoData[i]]++;
             }
 
+            // Find the first mode in the count array (index with highest element)
             int currentCount = countArray[0];
             for (int i = 1; i < countArrayMax; i++)
             {
@@ -281,6 +285,7 @@ namespace AstronomicalProcessing
                 }
             }
 
+            // Perform a bubble sort on the count array
             int countLength = countArray.Length;
             bool flag = true;
             for (int i = 1; i <= (countLength - 1) && flag; i++)
@@ -298,9 +303,19 @@ namespace AstronomicalProcessing
                 }
             }
 
+            // If the last index of the sorted count array is equal to the second last,
+            // the mode is not unimodal. Display a warning to the user.
             if (countArray[countLength - 1] == countArray[countLength - 2])
             {
                 mode = 0;
+                if (countArray[countLength - 1] == 0)
+                {
+                    MessageBox.Show("The mode cannot be found.");
+                }
+                else
+                {
+                    MessageBox.Show("The mode is not unimodal.");
+                }
             }
 
             txtMode.Text = mode.ToString();
