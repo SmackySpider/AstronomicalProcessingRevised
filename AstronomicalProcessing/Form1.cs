@@ -313,19 +313,17 @@ namespace AstronomicalProcessing
             // unimodal and is set to zero. Display a warning to the user and clear the mode text box.
             if (countArray[countLength - 1] == countArray[countLength - 2])
             {
-                mode = 0;
                 // This warning is displayed if every number in the array is unique
                 if (countArray[countLength - 1] == 1)
                 {
                     MessageBox.Show("The mode cannot be found in the array.");
-                    txtMode.Clear();
                 }
                 // This warning is displayed when there are two or more modes (not unimodal)
                 else
                 {
                     MessageBox.Show("The mode of the array is not unimodal.");
-                    txtMode.Clear();
                 }
+                txtMode.Clear();
             }
             // Display the mode to the user if there is only one mode
             else
