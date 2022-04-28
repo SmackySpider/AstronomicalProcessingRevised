@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstArray = new System.Windows.Forms.ListBox();
             this.lblArray = new System.Windows.Forms.Label();
             this.btnSort = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             this.btnRange = new System.Windows.Forms.Button();
             this.txtRange = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +65,7 @@
             this.lstArray.Name = "lstArray";
             this.lstArray.Size = new System.Drawing.Size(148, 407);
             this.lstArray.TabIndex = 0;
+            this.toolTip.SetToolTip(this.lstArray, "This is the list of data.");
             // 
             // lblArray
             // 
@@ -81,6 +84,7 @@
             this.btnSort.Size = new System.Drawing.Size(100, 23);
             this.btnSort.TabIndex = 2;
             this.btnSort.Text = "Sort Array";
+            this.toolTip.SetToolTip(this.btnSort, "Sorts the array using a bubble sort algorithm.");
             this.btnSort.UseVisualStyleBackColor = true;
             this.btnSort.Click += new System.EventHandler(this.BubbleSort);
             // 
@@ -99,6 +103,8 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 4;
+            this.toolTip.SetToolTip(this.txtSearch, "Enter a value here then press one of the search\r\nbuttons below to perform a searc" +
+        "h.");
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterKeyCheck);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IntegerCheck);
             // 
@@ -110,6 +116,8 @@
             this.btnBinSearch.Size = new System.Drawing.Size(100, 23);
             this.btnBinSearch.TabIndex = 5;
             this.btnBinSearch.Text = "Binary";
+            this.toolTip.SetToolTip(this.btnBinSearch, "Perform the search using a binary search method.\r\nThis method requires the list t" +
+        "o be sorted.");
             this.btnBinSearch.UseVisualStyleBackColor = true;
             this.btnBinSearch.Click += new System.EventHandler(this.BinarySearch);
             // 
@@ -121,6 +129,8 @@
             this.btnEdit.Size = new System.Drawing.Size(100, 23);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Edit Data";
+            this.toolTip.SetToolTip(this.btnEdit, "Select an item from the list, enter the number\r\nto replace it with in the field a" +
+        "bove.");
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.EditData);
             // 
@@ -130,6 +140,7 @@
             this.txtEdit.Name = "txtEdit";
             this.txtEdit.Size = new System.Drawing.Size(100, 20);
             this.txtEdit.TabIndex = 7;
+            this.toolTip.SetToolTip(this.txtEdit, "Enter a value here");
             this.txtEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterKeyCheck);
             this.txtEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IntegerCheck);
             // 
@@ -149,6 +160,7 @@
             this.btnRandomise.Size = new System.Drawing.Size(100, 23);
             this.btnRandomise.TabIndex = 9;
             this.btnRandomise.Text = "Randomise";
+            this.toolTip.SetToolTip(this.btnRandomise, "Fill the array with a random set of numbers,\r\nin an unsorted manner.");
             this.btnRandomise.UseVisualStyleBackColor = true;
             this.btnRandomise.Click += new System.EventHandler(this.RandomiseArray);
             // 
@@ -168,6 +180,8 @@
             this.btnSeqSearch.Size = new System.Drawing.Size(100, 23);
             this.btnSeqSearch.TabIndex = 11;
             this.btnSeqSearch.Text = "Sequential";
+            this.toolTip.SetToolTip(this.btnSeqSearch, "Perform the search using a sequential search method.\r\nThis search does not requir" +
+        "e the list to be sorted.");
             this.btnSeqSearch.UseVisualStyleBackColor = true;
             this.btnSeqSearch.Click += new System.EventHandler(this.SequentialSearch);
             // 
@@ -187,6 +201,7 @@
             this.btnAvg.Size = new System.Drawing.Size(100, 23);
             this.btnAvg.TabIndex = 14;
             this.btnAvg.Text = "Average";
+            this.toolTip.SetToolTip(this.btnAvg, "Get the average value from the list.");
             this.btnAvg.UseVisualStyleBackColor = true;
             this.btnAvg.Click += new System.EventHandler(this.Average);
             // 
@@ -197,6 +212,7 @@
             this.txtAvg.ReadOnly = true;
             this.txtAvg.Size = new System.Drawing.Size(100, 20);
             this.txtAvg.TabIndex = 13;
+            this.toolTip.SetToolTip(this.txtAvg, "Output for the button on the left. Read only.");
             // 
             // label3
             // 
@@ -214,6 +230,8 @@
             this.btnMidExtr.Size = new System.Drawing.Size(100, 23);
             this.btnMidExtr.TabIndex = 17;
             this.btnMidExtr.Text = "Mid Extreme";
+            this.toolTip.SetToolTip(this.btnMidExtr, "Calculate the mid-extreme of the set.\r\nThis is the average of the smallest \r\nand " +
+        "largest numbers.");
             this.btnMidExtr.UseVisualStyleBackColor = true;
             this.btnMidExtr.Click += new System.EventHandler(this.MidExtreme);
             // 
@@ -224,6 +242,7 @@
             this.txtMidExtr.ReadOnly = true;
             this.txtMidExtr.Size = new System.Drawing.Size(100, 20);
             this.txtMidExtr.TabIndex = 16;
+            this.toolTip.SetToolTip(this.txtMidExtr, "Output for the button on the left. Read only.");
             // 
             // label4
             // 
@@ -241,6 +260,7 @@
             this.btnMode.Size = new System.Drawing.Size(100, 23);
             this.btnMode.TabIndex = 20;
             this.btnMode.Text = "Mode";
+            this.toolTip.SetToolTip(this.btnMode, "Calculate the mode, the number that \r\nappears most frequently. Unimodal.");
             this.btnMode.UseVisualStyleBackColor = true;
             this.btnMode.Click += new System.EventHandler(this.Mode);
             // 
@@ -251,6 +271,7 @@
             this.txtMode.ReadOnly = true;
             this.txtMode.Size = new System.Drawing.Size(100, 20);
             this.txtMode.TabIndex = 19;
+            this.toolTip.SetToolTip(this.txtMode, "Output for the button on the left. Read only.");
             // 
             // label5
             // 
@@ -268,6 +289,7 @@
             this.btnRange.Size = new System.Drawing.Size(100, 23);
             this.btnRange.TabIndex = 23;
             this.btnRange.Text = "Range";
+            this.toolTip.SetToolTip(this.btnRange, "Calculate the difference between the \r\nsmallest and largest numbers.");
             this.btnRange.UseVisualStyleBackColor = true;
             this.btnRange.Click += new System.EventHandler(this.Range);
             // 
@@ -278,6 +300,7 @@
             this.txtRange.ReadOnly = true;
             this.txtRange.Size = new System.Drawing.Size(100, 20);
             this.txtRange.TabIndex = 22;
+            this.toolTip.SetToolTip(this.txtRange, "Output for the button on the left. Read only.");
             // 
             // pictureBox1
             // 
@@ -355,6 +378,7 @@
         private System.Windows.Forms.Button btnRange;
         private System.Windows.Forms.TextBox txtRange;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

@@ -274,7 +274,7 @@ namespace AstronomicalProcessing
                 countArray[i] = 0;
             }
 
-            // Add 1 to the count array for each element of netrinoData 
+            // Add 1 to the count array for each element of neutrinoData 
             for (int i = 0; i < arrayLength; i++)
             {
                 countArray[neutrinoData[i]]++;
