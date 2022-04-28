@@ -219,45 +219,19 @@ namespace AstronomicalProcessing
         // This method calculates the mid-extreme of a sorted array using btnMidExtr
         private void MidExtreme(object sender, EventArgs e)
         {
-            double smallest = 0;
-            double largest = 0;
-            double midExtreme = 0;
-            for (int i = 0; i < arrayLength; i++)
-            {
-                if (i == 0)
-                {
-                    smallest = neutrinoData[i];
-                }
-                else if (i == (arrayLength - 1))
-                {
-                    largest = neutrinoData[i];
-                }
-            }
-
-            midExtreme = Math.Round(((smallest + largest) / 2 ), 2);
+            double smallest = neutrinoData[0];
+            double largest = neutrinoData[arrayLength-1];
+            double midExtreme = Math.Round(((smallest + largest) / 2 ), 2);
             txtMidExtr.Text = midExtreme.ToString();
         }
 
         // This method calculates the range of a sorted array using btnRange
         private void Range(object sender, EventArgs e)
         {
-            double smallest = 0;
-            double largest = 0;
-            double range = 0;
+            double smallest = neutrinoData[0];
+            double largest = neutrinoData[arrayLength-1];
 
-            for (int i = 0; i < arrayLength; i++)
-            {
-                if (i == 0)
-                {
-                    smallest = neutrinoData[i];
-                }
-                else if (i == (arrayLength - 1))
-                {
-                    largest = neutrinoData[i];
-                }
-            }
-
-            range = Math.Round((largest - smallest), 2);
+            double range = Math.Round((largest - smallest), 2);
             txtRange.Text = range.ToString();
         }
 
@@ -313,19 +287,17 @@ namespace AstronomicalProcessing
             // unimodal and is set to zero. Display a warning to the user and clear the mode text box.
             if (countArray[countLength - 1] == countArray[countLength - 2])
             {
-                mode = 0;
                 // This warning is displayed if every number in the array is unique
                 if (countArray[countLength - 1] == 1)
                 {
                     MessageBox.Show("The mode cannot be found in the array.");
-                    txtMode.Clear();
                 }
                 // This warning is displayed when there are two or more modes (not unimodal)
                 else
                 {
                     MessageBox.Show("The mode of the array is not unimodal.");
-                    txtMode.Clear();
                 }
+                txtMode.Clear();
             }
             // Display the mode to the user if there is only one mode
             else
