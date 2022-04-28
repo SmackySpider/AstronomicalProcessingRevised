@@ -107,6 +107,7 @@
         "h.");
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterKeyCheck);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IntegerCheck);
+            this.txtSearch.MouseHover += new System.EventHandler(this.ToolTipHover);
             // 
             // btnBinSearch
             // 
@@ -143,6 +144,7 @@
             this.toolTip.SetToolTip(this.txtEdit, "Enter a value here");
             this.txtEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterKeyCheck);
             this.txtEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IntegerCheck);
+            this.txtEdit.MouseHover += new System.EventHandler(this.ToolTipHover);
             // 
             // lblEdit
             // 
@@ -213,6 +215,7 @@
             this.txtAvg.Size = new System.Drawing.Size(100, 20);
             this.txtAvg.TabIndex = 13;
             this.toolTip.SetToolTip(this.txtAvg, "Output for the button on the left. Read only.");
+            this.txtAvg.MouseHover += new System.EventHandler(this.ToolTipHover);
             // 
             // label3
             // 
@@ -243,6 +246,7 @@
             this.txtMidExtr.Size = new System.Drawing.Size(100, 20);
             this.txtMidExtr.TabIndex = 16;
             this.toolTip.SetToolTip(this.txtMidExtr, "Output for the button on the left. Read only.");
+            this.txtMidExtr.MouseHover += new System.EventHandler(this.ToolTipHover);
             // 
             // label4
             // 
@@ -272,6 +276,7 @@
             this.txtMode.Size = new System.Drawing.Size(100, 20);
             this.txtMode.TabIndex = 19;
             this.toolTip.SetToolTip(this.txtMode, "Output for the button on the left. Read only.");
+            this.txtMode.MouseHover += new System.EventHandler(this.ToolTipHover);
             // 
             // label5
             // 
@@ -301,6 +306,7 @@
             this.txtRange.Size = new System.Drawing.Size(100, 20);
             this.txtRange.TabIndex = 22;
             this.toolTip.SetToolTip(this.txtRange, "Output for the button on the left. Read only.");
+            this.txtRange.MouseHover += new System.EventHandler(this.ToolTipHover);
             // 
             // pictureBox1
             // 

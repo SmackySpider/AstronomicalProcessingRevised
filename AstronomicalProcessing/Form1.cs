@@ -305,5 +305,16 @@ namespace AstronomicalProcessing
                 txtMode.Text = mode.ToString();
             }
         }
+
+        // This method allows ToolTips to be displayed on text boxes
+        private void ToolTipHover(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(txtSearch, "Enter a value here then press one of the search buttons below to perform a search.");
+            toolTip.SetToolTip(txtEdit, "Enter a value here");
+            toolTip.SetToolTip(txtAvg, "Output for the button on the left. Read only.");
+            toolTip.SetToolTip(txtMidExtr, "Output for the button on the left. Read only.");
+            toolTip.SetToolTip(txtMode, "Output for the button on the left. Read only.");
+            toolTip.SetToolTip(txtRange, "Output for the button on the left. Read only.");
+        }
     }
 }
