@@ -238,9 +238,10 @@ namespace AstronomicalProcessing
         // This method calculates the mode of a sorted array using btnMode
         private void Mode(object sender, EventArgs e)
         {
-            double mode = 0;
+            double mode = -1;
             int countArrayMax = neutrinoData.Max();
             int[] countArray = new int[++countArrayMax];
+            int countLength = countArray.Length;
 
             // Create a count array and initialise with zero values
             for (int i = 0; i < countArrayMax; i++)
@@ -255,9 +256,16 @@ namespace AstronomicalProcessing
             }
 
             // Find the first mode in the count array (index with highest element)
-            int currentCount = countArray[0];
-            for (int i = 1; i < countArrayMax; i++)
+            int currentCount = -1;
+            for (int i = 0; i < countArrayMax; i++)
             {
+                // If the mode is equal to the current count, reset mode to -1
+                if (countArray[i] == currentCount)
+                {
+                    mode = -1;
+                }
+
+                // If there is only one of that mode, set the mode
                 if ((countArray[i] > currentCount) && (countArray[i] > 0))
                 {
                     currentCount = countArray[i];
@@ -265,44 +273,16 @@ namespace AstronomicalProcessing
                 }
             }
 
-            // Perform a bubble sort on the count array so that the number of modes can be checked
-            int countLength = countArray.Length;
-            bool flag = true;
-            for (int i = 1; i <= (countLength - 1) && flag; i++)
+            // If there are multiple modes, display a message
+            if (mode == -1)
             {
-                flag = false;
-                for (int j = 0; j < (countLength - 1); j++)
-                {
-                    if (countArray[j + 1] < countArray[j])
-                    {
-                        int temp = countArray[j];
-                        countArray[j] = countArray[j + 1];
-                        countArray[j + 1] = temp;
-                        flag = true;
-                    }
-                }
-            }
-
-            // If the last index of the sorted count array is equal to the second last, the mode is not
-            // unimodal and is set to zero. Display a warning to the user and clear the mode text box.
-            if (countArray[countLength - 1] == countArray[countLength - 2])
-            {
-                // This warning is displayed if every number in the array is unique
-                if (countArray[countLength - 1] == 1)
-                {
-                    MessageBox.Show("The mode cannot be found in the array.");
-                }
-                // This warning is displayed when there are two or more modes (not unimodal)
-                else
-                {
-                    MessageBox.Show("The mode of the array is not unimodal.");
-                }
+                MessageBox.Show("There is not a single mode.");
                 txtMode.Clear();
             }
             // Display the mode to the user if there is only one mode
             else
             {
-                txtMode.Text = mode.ToString();
+               txtMode.Text = mode.ToString();
             }
         }
 

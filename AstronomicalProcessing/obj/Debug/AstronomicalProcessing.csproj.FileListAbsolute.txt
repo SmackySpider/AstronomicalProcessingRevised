@@ -64,3 +64,14 @@ C:\Users\joshu\Source\Repos\AstronomicalProcessingRevised\AstronomicalProcessing
 C:\Users\joshu\Source\Repos\AstronomicalProcessingRevised\AstronomicalProcessing\bin\Debug\AstronomicalProcessing.exe.config
 C:\Users\joshu\Source\Repos\AstronomicalProcessingRevised\AstronomicalProcessing\bin\Debug\AstronomicalProcessing.exe
 C:\Users\joshu\Source\Repos\AstronomicalProcessingRevised\AstronomicalProcessing\bin\Debug\AstronomicalProcessing.pdb
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\bin\Debug\AstronomicalProcessing.exe.config
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\bin\Debug\AstronomicalProcessing.exe
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\bin\Debug\AstronomicalProcessing.pdb
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.csproj.AssemblyReference.cache
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.csproj.SuggestedBindingRedirects.cache
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.frmAstronomicalProcessing.resources
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.Properties.Resources.resources
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.csproj.GenerateResource.cache
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.csproj.CoreCompileInputs.cache
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.exe
+C:\Users\M153428\Source\Repos\SmackySpider\AstronomicalProcessingRevised\AstronomicalProcessing\obj\Debug\AstronomicalProcessing.pdb
