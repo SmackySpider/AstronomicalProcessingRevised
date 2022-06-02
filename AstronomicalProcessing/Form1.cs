@@ -283,7 +283,7 @@ namespace AstronomicalProcessing
             // Display the mode to the user if there is only one mode
             else
             {
-               txtMode.Text = mode.ToString();
+                txtMode.Text = mode.ToString();
             }
         }
 
