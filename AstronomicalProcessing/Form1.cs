@@ -29,6 +29,7 @@ namespace AstronomicalProcessing
             for (int i = 0; i < arrayLength; i++) {
                 neutrinoData[i] = rand.Next(10, 99);
             }
+
             // Enable buttons that do not need the list to be sorted, but do
             // need items to be in the list.
             btnSort.Enabled = true;
